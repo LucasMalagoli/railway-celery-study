@@ -2,7 +2,6 @@
 name = "fastapi-celery-railway"
 version = "0.1.0"
 description = "A FastAPI app with Celery scheduled tasks deployed on Railway using Redis"
-authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [{ include = "app" }]
 
