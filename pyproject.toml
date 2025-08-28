@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fastapi-celery-railway"
+version = "0.1.0"
+description = "A FastAPI app with Celery scheduled tasks deployed on Railway using Redis"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"
+uvicorn = { extras = ["standard"], version = "^0.30.0" }
+celery = { extras = ["redis"], version = "^5.4.0" }
+redis = "^5.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+black = "^24.4.0"
+isort = "^5.13.0"
+ruff = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
