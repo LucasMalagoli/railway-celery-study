@@ -1,5 +1,9 @@
 import os
+import logging
+
 from celery import Celery
+
+logger = logging.getLogger(__name__)
 
 # Railway provides REDIS_URL as an environment variable
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
@@ -16,7 +20,6 @@ def add(x, y):
     return x + y
 
 
-# Scheduled task
 @celery.task
 def print_hello():
-    print("Hello from Celery Beat!")
+    logger.info("Hello from Celery Beat!")
